@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Geist", sans-serif;
+}

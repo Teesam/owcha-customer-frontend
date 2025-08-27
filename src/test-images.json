@@ -1,0 +1,12 @@
+[
+        { "id": 1, "image": "https://randomuser.me/api/portraits/men/32.jpg"},
+        {"id": 2, "image": "https://randomuser.me/api/portraits/men/12.jpg"},
+        {"id": 3, "image": "https://randomuser.me/api/portraits/women/68.jpg"},
+        {"id": 4, "image": "https://randomuser.me/api/portraits/men/77.jpg"},
+        {"id": 5, "image": "https://randomuser.me/api/portraits/women/29.jpg"},
+        {"id": 6, "image": "https://randomuser.me/api/portraits/women/44.jpg"},
+        {"id": 7, "image": "https://randomuser.me/api/portraits/men/5.jpg"},
+        {"id": 8, "image": "https://randomuser.me/api/portraits/women/16.jpg"},
+        {"id": 9, "image": "https://randomuser.me/api/portraits/men/46.jpg"},
+        {"id": 10, "image": "https://randomuser.me/api/portraits/women/50.jpg"}
+]
