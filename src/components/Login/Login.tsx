@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import LogoIcon from "../../assets/Owcha Logo_Main.svg";
 import SignUpLoginSwitch from "../Layouts/SignUpLoginSwitch";
 import { userApis } from "../../apis";
-import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link, useNavigate} from "react-router-dom";
 
@@ -17,13 +16,12 @@ const Login = () => {
     const loginUser = async (arg: LoginInfo) => {
         try{
             const response = await userApis.userLogin(arg);
-            console.log(response);
             const token = response.data.token;
             localStorage.setItem("accessToken", token);
         }catch(error){
             console.log('Login failed');
         }finally{
-            console.log('Ran');
+            
         }
     };
 

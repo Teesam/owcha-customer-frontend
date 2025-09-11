@@ -16,7 +16,7 @@ interface CreateUser{
     password: string
 }
 
-const SignUpDetails = ({updateActive}: {updateActive: (active: string) => void}) => {
+const SignUpDetails = () => {
     const [confirmPassword, setConfirmPassword] = useState<string>("");
 
     const navigate = useNavigate();

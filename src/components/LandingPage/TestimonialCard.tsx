@@ -9,7 +9,7 @@ interface TestimonialCardProps{
 
 }
 
-const TestimonialsCard = ({image, name, jobRole, comment, numberOfStars}: TestimonialCardProps) => {
+const TestimonialsCard = ({image, name, jobRole, comment }: TestimonialCardProps) => {
     return(
         <div className="w-[100%] border-1 border-[#E3E8EF] rounded-md mt-[2rem] p-[2rem] shadow-lg lg:w-[30%]">
                 <div className="flex items-center mb-[2rem]">
