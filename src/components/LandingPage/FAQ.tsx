@@ -10,11 +10,13 @@ const faqs: FAQ[] = [
 
 const FAQ = () => {
     return(
-        <section className="mx-auto w-[90%] mr-[1rem] ml-[1rem] mt-[5rem] bg-white p-4">
-            <h2 className="mb-2 text-2xl font-extrabold">Frequestly Asked Questions</h2>
-            <p className="text-[#475467] mt-[1rem]">Everything you need to know about Owcha.</p>
-            <p className="text-[#C398EE] ">Please chat to our friendly team.</p>
-            <div className="divide-y divide-gray-100 mt-[3rem]">
+        <section className="mx-auto w-[90%] mr-[1rem] ml-[1rem] mt-[5rem] bg-white p-4 lg:flex lg:justify-between">
+            <div>
+                <h2 className="mb-2 text-2xl font-extrabold">Frequestly Asked Questions</h2>
+                <p className="text-[#475467] mt-[1rem]">Everything you need to know about Owcha.</p>
+                <p className="text-[#C398EE] ">Please chat to our friendly team.</p>
+            </div>
+            <div className="divide-y divide-gray-100 mt-[3rem] lg:mt-[unset] lg:w-[50%]">
                 {faqs.map((f) => (
                 <FAQCard key={f.id} item={f} />
                 ))}
