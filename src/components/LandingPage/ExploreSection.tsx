@@ -5,7 +5,6 @@ import { FaRegClock } from "react-icons/fa";
 import { PiMedal } from "react-icons/pi";
 import { FiGlobe } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
-import useInView from "../../hooks/useInView";
 import AnimatedCard from "./AnimatedCard";
 
 const ExploreSection = () => {
