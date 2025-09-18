@@ -6,6 +6,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { userApis } from "../../apis";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import OnboardDesktopView from "../OnboardingDesktopView";
 
 interface CreateUser{
     lastName: string,
@@ -44,70 +45,77 @@ const SignUpDetails = () => {
     }
     });
     return(
-        <div className="w-[100vw] px-[1rem] py-[2rem]">
-            <div className="flex flex-col items-center">
-                <button onClick={() => navigate(-1)} className="mb-[1rem] flex items-center w-[100%]">
-                    <IoIosArrowBack />
-                    <p className="font-bold ml-[.5rem]">Back</p>
-                </button>
-                <img className="w-[3rem]" src={LogoIcon} />
-                <h2 className="my-[1rem] text-[1.5rem] font-bold text-[#101828]">Create an account</h2>
-                <p className=" text-[#475467] mb-[1rem]">Join as an attendee</p>
-                <SignUpLoginSwitch active="signUp" />
-                <form className="my-[2rem] w-[100%]" onSubmit={formik.handleSubmit}>
-                    {/* <div className="flex flex-col item-starts">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor= "firstName">First Name</label>
-                        <input {...formik.getFieldProps("firstName")} className="rounded-lg border-1 border-[#D0D5DD]" name="firstName" type="text" placeholder="Enter your first name" />
-                    </div>
-                    <div className="flex flex-col item-starts mt-[1rem]">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor= "lastName">Last Name</label>
-                        <input {...formik.getFieldProps("lastName")} className="rounded-lg border-1 border-[#D0D5DD]" name="lastName" type="text" placeholder="Enter your last name" />
-                    </div>
-                    <div className="w-[100%] text-[grey] mt-[1rem] flex flex-col items-start">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor="gender">Gender</label>
-                        <select {...formik.getFieldProps("gender")} className="w-[100%] rounded-lg border-1 border-[#D0D5DD]" name="gender">
-                            <option value="">Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                            <option value="prefer not say">Prefer not to say</option>
-                        </select>
-                    </div> */}
-                    <div className="flex flex-col item-starts mt-[1rem]">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor= "email">Email</label>
-                        <input {...formik.getFieldProps("email")} className="rounded-lg border-1 border-[#D0D5DD]" name="email" type="email" placeholder="Enter your email" />
-                    </div>
-                    <div className="flex flex-col item-starts mt-[1rem]">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor= "password">Password</label>
-                        <input {...formik.getFieldProps("password")} className="rounded-lg border-1 border-[#D0D5DD]" name="password" type="password" placeholder="Enter your passwod" />
-                    </div>
-                    <div className="flex flex-col item-starts mt-[1rem]">
-                        <label className="mb-[.5rem] text-[#344054]" htmlFor= "password">Confirm Password</label>
-                        <input onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} className="rounded-lg border-1 border-[#D0D5DD]" name="password" type="password" placeholder="Confirm your password" />
-                    </div>
-
-                    <div className="mt-[1rem] flex items-center">
-                        <FaCheckCircle className={`${formik.values.password.length < 6 ? "text-[#475467] text-[.7rem]"
-                            : "text-[#50CA1C] text-[.7rem]"
-                        }`} />
-                        <p className="text-[#475467] ml-[.5rem] text-[.7rem]">Password must be at least 6 characters long</p>
-                    </div>
-                    <div className="mt-[1rem] flex items-center">
-                        <FaCheckCircle className="text-[#475467] text-[.7rem]" />
-                        <p className="text-[#475467] ml-[.5rem] text-[.7rem]">Password must contain one special character</p>
-                    </div>
-
-                    <button disabled={confirmPassword !== formik.values.password} 
-                    className={`${confirmPassword === formik.values.password ? "w-[100%] py-[1rem] bg-[#7C1EDA] text-white mt-[2rem] rounded-lg"
-                        : "w-[100%] py-[1rem] bg-[#c499c1] text-white mt-[2rem] rounded-lg"
-                    }`} 
-                    type="submit"
-                    
-                    >
-                        Continue
+        <div className="lg:flex w-[100vw] px-[1rem] lg:px-[unset] lg:py-[unset] min-h-[100vh] overflow-hidden">
+            <div className="flex justify-center items-center w-[100%] lg:w-[40%] min-h-[100vh]">
+                <div className="flex w-[100%] flex-col items-center lg:px-[6rem]">
+                    <button onClick={() => navigate(-1)} className="mb-[4rem] flex items-center w-[100%] lg:hidden">
+                        <IoIosArrowBack className="cursor-pointer" />
+                        <p className="ml-[.5rem] lg:text-[.8rem] cursor-pointer">Back</p>
                     </button>
-                    
-                </form>
+                    <div className="flex flex-col items-center w-[100%] lg:items-start">
+                        <img className="w-[3rem] lg:w-[2rem]" src={LogoIcon} />
+                        <h2 className="my-[1rem] text-[1.5rem] lg:text-[1rem] font-bold text-[#101828] w-auto">Create an account</h2>
+                        <p className=" text-[#475467] mb-[1rem] lg:text-[.8rem] w-auto">Join as an attendee</p>
+                    </div>
+                    <SignUpLoginSwitch active="signUp" />
+                    <form className="my-[2rem] lg:my-[1rem] w-[100%]" onSubmit={formik.handleSubmit}>
+                        {/* <div className="flex flex-col item-starts">
+                            <label className="mb-[.5rem] text-[#344054]" htmlFor= "firstName">First Name</label>
+                            <input {...formik.getFieldProps("firstName")} className="rounded-lg border-1 border-[#D0D5DD]" name="firstName" type="text" placeholder="Enter your first name" />
+                        </div>
+                        <div className="flex flex-col item-starts mt-[1rem]">
+                            <label className="mb-[.5rem] text-[#344054]" htmlFor= "lastName">Last Name</label>
+                            <input {...formik.getFieldProps("lastName")} className="rounded-lg border-1 border-[#D0D5DD]" name="lastName" type="text" placeholder="Enter your last name" />
+                        </div>
+                        <div className="w-[100%] text-[grey] mt-[1rem] flex flex-col items-start">
+                            <label className="mb-[.5rem] text-[#344054]" htmlFor="gender">Gender</label>
+                            <select {...formik.getFieldProps("gender")} className="w-[100%] rounded-lg border-1 border-[#D0D5DD]" name="gender">
+                                <option value="">Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer not say">Prefer not to say</option>
+                            </select>
+                        </div> */}
+                        <div className="flex flex-col item-starts mt-[1rem]">
+                            <label className="mb-[.5rem] text-[#344054] lg:text-[.8rem]" htmlFor= "email">Email</label>
+                            <input {...formik.getFieldProps("email")} className="rounded-lg border-1 border-[#D0D5DD] lg:text-[.8rem] lg:py-[.3rem]" name="email" type="email" placeholder="Enter your email" />
+                        </div>
+                        <div className="flex flex-col item-starts mt-[1rem]">
+                            <label className="mb-[.5rem] text-[#344054] lg:text-[.8rem]" htmlFor= "password">Password</label>
+                            <input {...formik.getFieldProps("password")} className="rounded-lg border-1 border-[#D0D5DD] lg:text-[.8rem] lg:py-[.3rem]" name="password" type="password" placeholder="Enter your passwod" />
+                        </div>
+                        <div className="flex flex-col item-starts mt-[1rem]">
+                            <label className="mb-[.5rem] text-[#344054] lg:text-[.8rem]" htmlFor= "password">Confirm Password</label>
+                            <input onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} className="rounded-lg border-1 border-[#D0D5DD] lg:text-[.8rem] lg:py-[.3rem]" name="password" type="password" placeholder="Confirm your password" />
+                        </div>
+
+                        <div className="mt-[1rem] flex items-center">
+                            <FaCheckCircle className={`${formik.values.password.length < 6 ? "text-[#475467] text-[.7rem]"
+                                : "text-[#50CA1C] text-[.7rem]"
+                            }`} />
+                            <p className="text-[#475467] ml-[.5rem] text-[.7rem]">Password must be at least 6 characters long</p>
+                        </div>
+                        <div className="mt-[1rem] flex items-center">
+                            <FaCheckCircle className="text-[#475467] text-[.7rem]" />
+                            <p className="text-[#475467] ml-[.5rem] text-[.7rem]">Password must contain one special character</p>
+                        </div>
+
+                        <button disabled={confirmPassword !== formik.values.password} 
+                        className={`${confirmPassword === formik.values.password ? "w-[100%] cursor-pointer py-[1rem] lg:py-[.7rem] bg-[#7C1EDA] text-white mt-[2rem] rounded-lg lg:text-[.8rem]"
+                            : "w-[100%] cursor-pointer py-[1rem] lg:py-[.7rem] bg-[#c499c1] text-white mt-[2rem] rounded-lg lg:text-[.8rem]"
+                        }`} 
+                        type="submit"
+                        
+                        >
+                            Continue
+                        </button>
+                        
+                    </form>
+                </div>
+            </div>
+            <div className="hidden lg:block w-[60%]">
+                <OnboardDesktopView />
             </div>
         </div>
     )

@@ -11,13 +11,13 @@ const SignUpLoginSwitch = ({active}: SignUpLoginSwitchProps) => {
                 "bg-white rounded-lg w-[50%] cursor-pointer font-bold text-[#344054] px-[.5rem] flex items-center justify-center" 
                 : "w-[50%] text-[#667085] cursor-pointer font-bold flex items-center justify-center"
                 }>
-                <Link className="px-[2rem] py-[1rem]" to="/sign-up">Sign Up</Link>
+                <Link className="px-[2rem] py-[1rem] lg:py-[.5rem] lg:text-[.7rem]" to="/sign-up">Sign Up</Link>
             </div>
             <div className={active==="login"? 
             "bg-white rounded-lg w-[50%] cursor-pointer font-bold text-[#344054] px-[.5rem] flex items-center justify-center" 
                 : "w-[50%] text-[#667085] cursor-pointer font-bold flex items-center justify-center"
                 }>
-                <Link className="px-[2rem] py-[1rem]" to="/login">Login</Link>
+                <Link className="px-[2rem] py-[1rem] lg:py-[.5rem] lg:text-[.7rem]" to="/login">Login</Link>
             </div>
         </div>
     )
