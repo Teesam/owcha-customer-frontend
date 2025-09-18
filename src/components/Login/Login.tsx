@@ -36,14 +36,14 @@ const Login = () => {
     }
     });
     return(
-        <div className="w-[100vw] px-[1rem] py-[5rem] lg:py-[unset] lg:px-[unset] lg:flex lg:min-h-[100vh]">
-            <div className="flex justify-center items-center w-[40%] h-[vh]">
-                <div className="flex flex-col items-center lg:w-[100%] lg:px-[6rem]">
-                    <Link onClick={() => navigate(-1)} to="/" className="mb-[1rem] flex items-center w-[100%]">
+        <div className="w-[100vw] px-[1rem] lg:py-[unset] lg:px-[unset] lg:flex lg:min-h-[100vh]">
+            <div className="flex justify-center items-center w-[100%] lg:w-[40%] min-h-[100vh]">
+                <div className="flex w-[100%] flex-col items-center lg:px-[6rem]">
+                    <Link onClick={() => navigate(-1)} to="/" className="hidden mb-[1rem] flex items-center w-[100%]">
                         <IoIosArrowBack />
                         <p className="ml-[.5rem] lg:text-[.8rem]">Back</p>
                     </Link>
-                    <img className="w-[3rem]" src={LogoIcon} />
+                    <img onClick={() => navigate("/")} className="w-[3rem] lg:w-[2rem] cursor-pointer" src={LogoIcon} />
                     <h2 className="my-[1rem] text-[1.5rem] font-bold text-[#101828] lg:text-[1rem]">Login to your account</h2>
                     <p className=" text-[#475467] mb-[1rem] lg:text-[.8rem]">Welcome back! Please enter your details.</p>
                     <SignUpLoginSwitch active="login" />
@@ -63,11 +63,11 @@ const Login = () => {
                             </div>
                             <h4 className="font-bold text-[#7C1EDA] lg:text-[.8rem]">Forgot Password</h4>
                         </div>
-                        <button className="w-[100%] py-[.5rem] bg-[#7C1EDA] text-white mt-[2rem] rounded-lg lg:text-[.8rem] cursor-pointer" type="submit">Sign In</button>
+                        <button className="w-[100%] cursor-pointer py-[1rem] lg:py-[.7rem] bg-[#7C1EDA] text-white mt-[2rem] rounded-lg lg:text-[.8rem]" type="submit">Continue</button>
                     </form>
                 </div>
             </div>
-            <div className="hidden lg:block w-[60%] bg-[#53389E]">
+            <div className="hidden lg:block w-[60%]">
                 <OnboardDesktopView />
             </div>
         </div>

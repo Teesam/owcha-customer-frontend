@@ -2,21 +2,23 @@ import { useState } from "react";
 import LogoIcon from "../../assets/Owcha Logo_Main.svg";
 import { GoPeople } from "react-icons/go";
 import { IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiCalendar } from "react-icons/fi";
 
 
 const Start = ({updateActive}: {updateActive: (active: string) => void}) => {
     const [currentMenu, setCurrentMenu] = useState<"attendee" | "vendor">();
 
+    const navigate = useNavigate();
+
     return(
-        <div className="py-[2rem] px-[1rem]">
-            <div className="flex flex-col items-center justify-center h-[100%]">
-                <Link to="/" className="mb-[1rem] flex items-center w-[100%]">
+        <div className="flex justify-center px-[1rem] min-h-[100vh]">
+            <div className="flex flex-col items-center justify-center min-h-[100%]">
+                <Link to="/" className="hidden mb-[1rem] flex items-center w-[100%]">
                     <IoIosArrowBack />
                     <p className="font-bold ml-[.5rem]">Home</p>
                 </Link>
-                <img className="w-[3rem]" src={LogoIcon} />
+                <img onClick={() => navigate("/")} className="w-[3rem] lg:w-[2rem] cursor-pointer" src={LogoIcon} />
                 <h2 className="font-bold text-[1.5rem] mt-[1rem] text-center">How would you like to use Owcha?</h2>
                 <button className="w-[100%]" onClick={() => setCurrentMenu("attendee")}>
                     <div className={`${currentMenu === "attendee" ? "w-[100%] flex px-[1rem] py-[2rem] rounded-lg border-2 border-[#7C1EDA] mt-[1rem]" 

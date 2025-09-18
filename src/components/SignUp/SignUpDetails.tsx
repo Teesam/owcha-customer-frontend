@@ -48,12 +48,12 @@ const SignUpDetails = () => {
         <div className="lg:flex w-[100vw] px-[1rem] lg:px-[unset] lg:py-[unset] min-h-[100vh] overflow-hidden">
             <div className="flex justify-center items-center w-[100%] lg:w-[40%] min-h-[100vh]">
                 <div className="flex w-[100%] flex-col items-center lg:px-[6rem]">
-                    <button onClick={() => navigate(-1)} className="mb-[4rem] flex items-center w-[100%] lg:hidden">
+                    <button onClick={() => navigate(-1)} className="hidden mb-[4rem] flex items-center w-[100%] lg:hidden">
                         <IoIosArrowBack className="cursor-pointer" />
                         <p className="ml-[.5rem] lg:text-[.8rem] cursor-pointer">Back</p>
                     </button>
                     <div className="flex flex-col items-center w-[100%] lg:items-start">
-                        <img className="w-[3rem] lg:w-[2rem]" src={LogoIcon} />
+                        <img onClick={() => navigate("/")} className="w-[3rem] lg:w-[2rem] cursor-pointer" src={LogoIcon} />
                         <h2 className="my-[1rem] text-[1.5rem] lg:text-[1rem] font-bold text-[#101828] w-auto">Create an account</h2>
                         <p className=" text-[#475467] mb-[1rem] lg:text-[.8rem] w-auto">Join as an attendee</p>
                     </div>
