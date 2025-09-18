@@ -1,8 +1,14 @@
 import LogoIcon from "../../assets/Owcha Logo_Main.svg";
+import useInView from "../../hooks/useInView";
 
 const HowOwchaWorks = () => {
+    const { ref, isVisible } = useInView<HTMLDivElement>();
     return(
-        <section className="mr-[1rem] lg:mr-[unset] ml-[1rem] relative flex flex-col items-center bg-[#FAFAFB] w-[90%] lg:w-[100%] lg:px-[5rem] pr-[1rem] pl-[1rem] mt-[5rem] pt-[5rem] pb-[10rem]">
+        <section ref={ref}
+            className={`transition-all duration-700 ease-in-out ${
+            isVisible ? "opacity-100 mr-[1rem] lg:mr-[unset] ml-[1rem] relative flex flex-col items-center bg-[#FAFAFB] w-[90%] lg:w-[100%] lg:px-[5rem] pr-[1rem] pl-[1rem] mt-[5rem] pt-[5rem] pb-[10rem]"
+            : "opacity-0 mr-[1rem] lg:mr-[unset] ml-[1rem] relative flex flex-col items-center bg-[#FAFAFB] w-[90%] lg:w-[100%] lg:px-[5rem] pr-[1rem] pl-[1rem] mt-[5rem] pt-[5rem] pb-[10rem]"}`}
+        >
             <img className="absolute w-[3rem] opacity-5 top-[8%] left-[25%] rotate-20" src={LogoIcon} />
             <img className="absolute w-[3rem] opacity-5 top-[17%] right-[15%] rotate-35" src={LogoIcon} />
             <img className="absolute w-[3rem] opacity-5 top-[22%] left-[10%] rotate-20" src={LogoIcon} />
