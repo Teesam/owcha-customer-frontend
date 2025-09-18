@@ -6,8 +6,10 @@ import { PiMedal } from "react-icons/pi";
 import { FiGlobe } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
 import AnimatedCard from "./AnimatedCard";
+import { useNavigate } from "react-router-dom";
 
 const ExploreSection = () => {
+    const navigate = useNavigate();
 
     return (
         <section className="mt-[4rem] flex flex-col items-center text-[#fff] lg:px-[5rem]">
@@ -56,7 +58,7 @@ const ExploreSection = () => {
                 <FiCalendar className="text-[4rem]" />
                 <h3 className="font-bold text-[1.5rem] mt-[2rem] mb-[2rem]">Create Events</h3>
                 <p className="mb-[2rem]">Bring your ideas to life with our intuitive event creation tools</p>
-                <button className="text-[#00ABF0] flex items-center justify-center bg-[#fff] rounded-md px-[2rem] py-[1rem]">
+                <button onClick={() => navigate("/sign-up")} className="cursor-pointer text-[#00ABF0] flex items-center justify-center bg-[#fff] rounded-md px-[2rem] py-[1rem]">
                     Start creating
                 </button>
                 </AnimatedCard>

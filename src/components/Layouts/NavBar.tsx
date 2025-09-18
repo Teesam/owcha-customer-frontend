@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../../assets/Owcha Lockup_Main_1.png";
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
@@ -7,6 +7,19 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <nav className="flex justify-between items-center max-w-[100vw] pr-4 pl-4 pt-4 pb-4 border-b border-[#0003] lg:px-20">
@@ -50,7 +63,7 @@ const NavBar = () => {
 
       {/* Slide-out mobile menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-[100vw] bg-white shadow-lg transform transition-transform duration-300 ease-in-out bg-white z-[10] ${
+        className={`fixed top-0 right-0 h-[100vh] w-[100vw] bg-white shadow-lg transform transition-transform duration-300 ease-in-out bg-white z-[10] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
